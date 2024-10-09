@@ -9,8 +9,10 @@ import {
 import { Icon, ProfileItem } from "../components";
 import DEMO from "../assets/data/demo";
 import styles, { WHITE } from "../assets/styles";
+import { useNavigation } from "@react-navigation/native";
 
 const Profile = () => {
+  const navigation = useNavigation();
   const {
     age,
     image,
@@ -21,7 +23,11 @@ const Profile = () => {
     location,
     match,
     name,
-  } = DEMO[7];
+  } = DEMO[5];
+
+  const handleSecureOpportunity = () => {
+    navigation.navigate('Chat'); // Navigate to the Chat tab
+  };
 
   return (
     <ImageBackground
@@ -31,7 +37,7 @@ const Profile = () => {
       <ScrollView style={styles.containerProfile}>
         <ImageBackground source={image} style={styles.photo}>
           <View style={styles.top}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
               <Icon
                 name="chevron-back"
                 size={20}
@@ -51,6 +57,7 @@ const Profile = () => {
           </View>
         </ImageBackground>
 
+        <View style={styles.profileInfoContainer}>
         <ProfileItem
           matches={match}
           name={name}
@@ -61,15 +68,14 @@ const Profile = () => {
           info3={info3}
           info4={info4}
         />
+        </View>
 
         <View style={styles.actionsProfile}>
-          <TouchableOpacity style={styles.circledButton}>
-            <Icon name="ellipsis-horizontal" size={20} color={WHITE} />
-          </TouchableOpacity>
 
-          <TouchableOpacity style={styles.roundedButton}>
+
+          <TouchableOpacity style={styles.roundedButton} onPress={handleSecureOpportunity}>
             <Icon name="chatbubble" size={20} color={WHITE} />
-            <Text style={styles.textButton}>Start chatting</Text>
+            <Text style={styles.textButton}>Secure your opportunity</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>

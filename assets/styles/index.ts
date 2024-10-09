@@ -299,4 +299,32 @@ export default StyleSheet.create({
   iconMenu: {
     alignItems: "center",
   },
+
+  noMoreCardsContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
+  },
+  noMoreCardsTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  upgradeButton: {
+    backgroundColor: '#007AFF',
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+  },
+  upgradeButtonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+
+  profileInfoContainer: {
+    alignItems: 'center', // This will center the ProfileItem content
+    paddingHorizontal: 10,
+  },
 });

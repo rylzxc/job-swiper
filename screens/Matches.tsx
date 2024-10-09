@@ -26,7 +26,7 @@ const Matches = () => (
 
       <FlatList
         numColumns={2}
-        data={DEMO}
+        data={DEMO.slice(0, 3)}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => (
           <TouchableOpacity>
